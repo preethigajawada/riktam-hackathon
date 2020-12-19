@@ -38,21 +38,15 @@ ButtonSubmit.grid(row=5, column=2)
 # Entries
 firstname = Entry(root, width=40, font=('Arial', 14))
 firstname.grid(row=0, column=1, columnspan=2)
-
 lastname = Entry(root, width=40, font=('Arial', 14))
 lastname.grid(row=1, column=1, columnspan=2)
-
 address = Entry(root, width=40, font=('Arial', 14))
 address.grid(row=2, column=1, columnspan=2)
-
 GenderGroup = StringVar()
 Radiobutton(root, text='Male', value='male', variable=GenderGroup).grid(row=3, column=1)
 Radiobutton(root, text='Female', value='female', variable=GenderGroup).grid(row=3, column=2)
-
-
 comment = Text(root, width=40, height=5, font=('Arial', 14))
 comment.grid(row=4, column=1, columnspan=2, padx=10, pady=10)
-
 def SaveData():
     message = conn.Add(firstname.get(), lastname.get(), address.get(), GenderGroup.get(), comment.get(1.0, 'end'))
     firstname.delete(0,'end')
@@ -60,7 +54,6 @@ def SaveData():
     address.delete(0, 'end')
     comment.delete(1.0, 'end')
     showinfo(title='Add Information', message=message)
-
 def ShowComplainList():
 
     listrequest = ComplaintListing()
