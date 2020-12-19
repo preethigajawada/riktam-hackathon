@@ -1,10 +1,7 @@
 from tkinter import *
 from tkinter.ttk import *
 import sqlite3
-
 from configdb import ConnectionDatabase
-
-
 class ComplaintListing:
     def __init__(self):
         self.connectionDB = ConnectionDatabase()
