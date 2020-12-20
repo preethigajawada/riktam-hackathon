@@ -24,6 +24,8 @@ class ComplaintListing:
         tree.column('#4', stretch=NO, minwidth=0, width=100)
         tree.column('#5', stretch=NO, minwidth=0, width=300)
         cursor = self.connectionDB.ListRequest()
+        
+        
         for row in cursor:
             tree.insert('', 'end', '#{}'.format(row['ID']), text=row['ID'])
             tree.set('#{}'.format(row['ID']), '#FirstName', row['FirstName'])
